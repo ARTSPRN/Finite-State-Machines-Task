@@ -1,3 +1,7 @@
+# Детерминированный конечный автомат (ДКА)
+# Фиксированный алфавит: {a, b}
+
+
 def check_string(s: str) -> bool:
     state = 0
 
@@ -21,17 +25,11 @@ def check_string(s: str) -> bool:
 
     return state == 2
 
+
 test_strings = [
-    "ab",
-    "aab",
-    "abb",
-    "aabb",
-    "baba",
-    "baab",
-    "abc",
-    ""
+    "aaaaaaaaaaaaaaaaaba"
 ]
 
 for s in test_strings:
-    result = check_string(s)
-    print(f"Строка {s!r}: {'подходит' if result else 'не подходит'}")
+    result = "подходит" if check_string(s) else "не подходит"
+    print(f"Строка {s!r}: {result}")
